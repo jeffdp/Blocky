@@ -14,6 +14,7 @@
 		1F929C501A4796190065B133 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F929C4F1A4796190065B133 /* Images.xcassets */; };
 		1F929C531A4796190065B133 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F929C511A4796190065B133 /* LaunchScreen.xib */; };
 		1F929C5F1A4796190065B133 /* BlockyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F929C5E1A4796190065B133 /* BlockyTests.swift */; };
+		1F929C691A47970C0065B133 /* MetalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F929C681A47970C0065B133 /* MetalUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		1F929C581A4796190065B133 /* BlockyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F929C5D1A4796190065B133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F929C5E1A4796190065B133 /* BlockyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockyTests.swift; sourceTree = "<group>"; };
+		1F929C681A47970C0065B133 /* MetalUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				1F929C461A4796190065B133 /* AppDelegate.swift */,
 				1F929C481A4796190065B133 /* GameViewController.swift */,
+				1F929C681A47970C0065B133 /* MetalUtil.swift */,
 				1F929C4A1A4796190065B133 /* Shaders.metal */,
 				1F929C4C1A4796190065B133 /* Main.storyboard */,
 				1F929C4F1A4796190065B133 /* Images.xcassets */,
@@ -218,6 +221,7 @@
 				1F929C4B1A4796190065B133 /* Shaders.metal in Sources */,
 				1F929C491A4796190065B133 /* GameViewController.swift in Sources */,
 				1F929C471A4796190065B133 /* AppDelegate.swift in Sources */,
+				1F929C691A47970C0065B133 /* MetalUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
