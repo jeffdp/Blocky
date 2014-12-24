@@ -15,6 +15,11 @@
 		1F929C531A4796190065B133 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F929C511A4796190065B133 /* LaunchScreen.xib */; };
 		1F929C5F1A4796190065B133 /* BlockyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F929C5E1A4796190065B133 /* BlockyTests.swift */; };
 		1F929C691A47970C0065B133 /* MetalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F929C681A47970C0065B133 /* MetalUtil.swift */; };
+		1FBAA4F31A4B3381003B6FD6 /* RenderEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBAA4F21A4B3381003B6FD6 /* RenderEngine.swift */; };
+		1FBAA4F51A4B33A7003B6FD6 /* QuadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBAA4F41A4B33A7003B6FD6 /* QuadModel.swift */; };
+		1FBAA4F71A4B385D003B6FD6 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBAA4F61A4B385D003B6FD6 /* GameEngine.swift */; };
+		1FBAA4F91A4B5A44003B6FD6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBAA4F81A4B5A44003B6FD6 /* GameScene.swift */; };
+		1FBAA4FB1A4B5BD4003B6FD6 /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBAA4FA1A4B5BD4003B6FD6 /* ModelObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		1F929C5D1A4796190065B133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F929C5E1A4796190065B133 /* BlockyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockyTests.swift; sourceTree = "<group>"; };
 		1F929C681A47970C0065B133 /* MetalUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalUtil.swift; sourceTree = "<group>"; };
+		1FBAA4F21A4B3381003B6FD6 /* RenderEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderEngine.swift; sourceTree = "<group>"; };
+		1FBAA4F41A4B33A7003B6FD6 /* QuadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadModel.swift; sourceTree = "<group>"; };
+		1FBAA4F61A4B385D003B6FD6 /* GameEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
+		1FBAA4F81A4B5A44003B6FD6 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		1FBAA4FA1A4B5BD4003B6FD6 /* ModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				1F929C461A4796190065B133 /* AppDelegate.swift */,
-				1F929C481A4796190065B133 /* GameViewController.swift */,
-				1F929C681A47970C0065B133 /* MetalUtil.swift */,
-				1F929C4A1A4796190065B133 /* Shaders.metal */,
-				1F929C4C1A4796190065B133 /* Main.storyboard */,
+				1FBAA4FC1A4B695F003B6FD6 /* UI */,
+				1FBAA4FD1A4B6983003B6FD6 /* Engine */,
 				1F929C4F1A4796190065B133 /* Images.xcassets */,
-				1F929C511A4796190065B133 /* LaunchScreen.xib */,
 				1F929C441A4796190065B133 /* Supporting Files */,
 			);
 			path = Blocky;
@@ -116,6 +123,30 @@
 				1F929C5D1A4796190065B133 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FBAA4FC1A4B695F003B6FD6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1F929C481A4796190065B133 /* GameViewController.swift */,
+				1F929C4C1A4796190065B133 /* Main.storyboard */,
+				1F929C511A4796190065B133 /* LaunchScreen.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		1FBAA4FD1A4B6983003B6FD6 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				1FBAA4F21A4B3381003B6FD6 /* RenderEngine.swift */,
+				1FBAA4F61A4B385D003B6FD6 /* GameEngine.swift */,
+				1FBAA4F81A4B5A44003B6FD6 /* GameScene.swift */,
+				1F929C681A47970C0065B133 /* MetalUtil.swift */,
+				1FBAA4FA1A4B5BD4003B6FD6 /* ModelObject.swift */,
+				1FBAA4F41A4B33A7003B6FD6 /* QuadModel.swift */,
+				1F929C4A1A4796190065B133 /* Shaders.metal */,
+			);
+			name = Engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FBAA4FB1A4B5BD4003B6FD6 /* ModelObject.swift in Sources */,
+				1FBAA4F31A4B3381003B6FD6 /* RenderEngine.swift in Sources */,
 				1F929C4B1A4796190065B133 /* Shaders.metal in Sources */,
+				1FBAA4F91A4B5A44003B6FD6 /* GameScene.swift in Sources */,
+				1FBAA4F71A4B385D003B6FD6 /* GameEngine.swift in Sources */,
+				1FBAA4F51A4B33A7003B6FD6 /* QuadModel.swift in Sources */,
 				1F929C491A4796190065B133 /* GameViewController.swift in Sources */,
 				1F929C471A4796190065B133 /* AppDelegate.swift in Sources */,
 				1F929C691A47970C0065B133 /* MetalUtil.swift in Sources */,
@@ -415,6 +451,7 @@
 				1F929C641A4796190065B133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F929C651A4796190065B133 /* Build configuration list for PBXNativeTarget "BlockyTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +460,7 @@
 				1F929C671A4796190065B133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
