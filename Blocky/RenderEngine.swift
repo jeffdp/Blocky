@@ -57,7 +57,7 @@ class RenderEngine {
 		let renderPassDescriptor = MTLRenderPassDescriptor()
 		renderPassDescriptor.colorAttachments[0].texture = drawable.texture
 		renderPassDescriptor.colorAttachments[0].loadAction = .Clear
-		renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+		renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
 		renderPassDescriptor.colorAttachments[0].storeAction = .Store
 		
 		let renderEncoder = commandBuffer.renderCommandEncoderWithDescriptor(renderPassDescriptor)!
@@ -72,7 +72,6 @@ class RenderEngine {
 			let indexBuffer = indexBufferWithIndices(model.indices, device)
 			
 			renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, atIndex: 0)
-//			renderEncoder.drawPrimitives(.Triangle, vertexStart: 0, vertexCount: vertexCount, instanceCount: 1)
 			renderEncoder.drawIndexedPrimitives(.Triangle, indexCount: vertexCount, indexType: .UInt16, indexBuffer: indexBuffer, indexBufferOffset: 0)
 		}
 		
