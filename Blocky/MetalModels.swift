@@ -19,7 +19,7 @@ func vertexBufferWithVertices(vertices: [Float], device: MTLDevice) -> MTLBuffer
 	return vertexBuffer
 }
 
-func indexBufferWithIndices(indices: [Int], device: MTLDevice) -> MTLBuffer {
+func indexBufferWithIndices(indices: [UInt16], device: MTLDevice) -> MTLBuffer {
 	let length = indexData.count * sizeofValue(indices[0])
 	let indexBuffer = device.newBufferWithBytes(indices, length: length, options: nil)
 	indexBuffer.label = "indices"

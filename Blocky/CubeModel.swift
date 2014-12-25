@@ -22,7 +22,7 @@ class CubeModel : ModelObject {
 		}
 	}
 	
-	var indices: [Int] {
+	var indices: [UInt16] {
 		get {
 			return indexData
 		}
@@ -102,7 +102,7 @@ class CubeModel : ModelObject {
 		1, 1,
 		1, 0]
 
-	let indexData: [Int] = [
+	let indexData: [UInt16] = [
 		//Left
 		0, 1, 2,
 		0, 2, 3,
