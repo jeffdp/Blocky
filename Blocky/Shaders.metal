@@ -27,5 +27,5 @@ vertex VertexInOut passThroughVertex(uint vid [[ vertex_id ]],
 
 fragment half4 passThroughFragment(VertexInOut inFrag [[stage_in]])
 {
-    return half4(1.0, 0.0, 0.0, 1.0);
+    return half4(0.0, 1.0, 0.0, 1.0);
 };

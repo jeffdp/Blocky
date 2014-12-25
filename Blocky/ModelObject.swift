@@ -12,4 +12,6 @@ import Metal
 protocol ModelObject {
 	var vertices: [Float] { get }
 	var vertexCount: Int { get }
+	
+	var indices: [Int] { get }
 }

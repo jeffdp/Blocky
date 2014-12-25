@@ -40,14 +40,6 @@ class RenderEngine {
 		}
 	}
 	
-	func createVertexBuffer(device: MTLDevice, vertices: [Float]) -> MTLBuffer {
-		let length = vertexData.count * sizeofValue(vertices[0])
-		let vertexBuffer = device.newBufferWithBytes(vertices, length: length, options: nil)
-		vertexBuffer.label = "vertices"
-		
-		return vertexBuffer
-	}
-	
 	func update() {
 		
 	}
@@ -65,7 +57,7 @@ class RenderEngine {
 		let renderPassDescriptor = MTLRenderPassDescriptor()
 		renderPassDescriptor.colorAttachments[0].texture = drawable.texture
 		renderPassDescriptor.colorAttachments[0].loadAction = .Clear
-		renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+		renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
 		renderPassDescriptor.colorAttachments[0].storeAction = .Store
 		
 		let renderEncoder = commandBuffer.renderCommandEncoderWithDescriptor(renderPassDescriptor)!
@@ -75,11 +67,13 @@ class RenderEngine {
 		renderEncoder.setRenderPipelineState(pipelineState)
 		
 		for model: ModelObject in scene.models {
-			let vertexBuffer = createVertexBuffer(device, vertices: model.vertices)
 			let vertexCount = model.vertexCount
+			let vertexBuffer = vertexBufferWithVertices(model.vertices, device)
+			let indexBuffer = indexBufferWithIndices(model.indices, device)
 			
 			renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, atIndex: 0)
 			renderEncoder.drawPrimitives(.Triangle, vertexStart: 0, vertexCount: vertexCount, instanceCount: 1)
+//			renderEncoder.drawIndexedPrimitives(.Triangle, indexCount: vertexCount, indexType: .UInt32, indexBuffer: indexBuffer, indexBufferOffset: 0)
 		}
 		
 		renderEncoder.popDebugGroup()

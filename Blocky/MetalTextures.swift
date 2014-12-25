@@ -1,5 +1,5 @@
 //
-//  MetalUtil.swift
+//  MetalTextures.swift
 //  Blocky
 //
 //  Created by Jeff Porter on 2014-12-21.
@@ -8,6 +8,8 @@
 
 import UIKit
 import Metal
+
+// This is a series of functions that are helpful when working with textures in Metal.
 
 func imageToTexture(image: UIImage, device: MTLDevice) -> MTLTexture {
 	let bytesPerPixel = 8 * 4
