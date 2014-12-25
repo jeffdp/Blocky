@@ -63,7 +63,7 @@ class RenderEngine {
 		let renderEncoder = commandBuffer.renderCommandEncoderWithDescriptor(renderPassDescriptor)!
 		renderEncoder.label = "render encoder"
 		
-		renderEncoder.pushDebugGroup("draw morphing triangle")
+		renderEncoder.pushDebugGroup("draw triangle")
 		renderEncoder.setRenderPipelineState(pipelineState)
 		
 		for model: ModelObject in scene.models {
